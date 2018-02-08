@@ -2,7 +2,7 @@ import fetchival from 'fetchival';
 
 import apiConfig from './config';
 
-export const fetchApi = (endPoint, payload = {}, method = 'get', headers = {}, queryParams = {}) => {
+export const fetchApi = (endPoint, payload = {}, method = 'get') => {
     return fetchival(`${apiConfig.url}${endPoint}`, {
         headers: {},
     })[method.toLowerCase()](payload)

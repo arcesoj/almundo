@@ -6,7 +6,10 @@
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "test": "jest",
     "lint": "eslint .",
-    "prettier": "eslint . --fix"
+    "prettier": "eslint . --fix",
+    "build": "babel src/ -d lib/",
+    "prepublish": "npm run build",
+    "flow": "flow"
   },
   "dependencies": {
     "eslint-plugin-react-native": "^3.2.1",
@@ -26,8 +29,11 @@
     "reselect": "^3.0.1"
   },
   "devDependencies": {
+    "flow-bin": "^0.41.0",
+    "babel-cli": "^6.26.0",
     "babel-eslint": "^8.2.1",
     "babel-jest": "22.1.0",
+    "babel-preset-flow": "^6.23.0",
     "babel-preset-react-native": "4.0.0",
     "enzyme": "^3.2.0",
     "eslint": "^4.17.0",

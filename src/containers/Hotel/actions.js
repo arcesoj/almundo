@@ -31,7 +31,6 @@ export const searchHotel = (text) => {
 requestToHotels = (dispatch) => {
 	api.getAll()
 	.then((responseJson) => {
-		console.log(responseJson)
 		if(responseJson) {
 			dispatch({ type: HOTEL_FEED, payload: responseJson});
 		} else {

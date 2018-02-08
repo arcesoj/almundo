@@ -22,7 +22,7 @@ class HotelDetailScreen extends Component {
   static navigationOptions = ({ navigation }) => ({
     title: `${navigation.state.params.hotel.name}`,
     headerTitleStyle : {
-        textAlign: 'left', 
+        textAlign: 'left',
         alignSelf:'center',
         color: 'black',
         fontWeight: 'bold'
@@ -85,7 +85,7 @@ class HotelDetailScreen extends Component {
 
 const styles = {
   containerStyle: {
-    flex: 1, 
+    flex: 1,
     flexDirection: 'column'
   },
   titleStyle: {

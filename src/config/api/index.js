@@ -1,5 +1,4 @@
 import fetchival from 'fetchival';
-import _ from 'lodash';
 
 import apiConfig from './config';
 

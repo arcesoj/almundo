@@ -22,9 +22,9 @@ export default (state = INITIAL_STATE, action) => {
             return {...state, loading: false, refreshing: false, error: 'Error Message' }
         case HOTEL_FEED:
             return {...state, loading: false, refreshing: false, error: '', data: action.payload }
-        case HOTEL_FEED_REFRESHING: 
+        case HOTEL_FEED_REFRESHING:
             return {...state, loading: false, refreshing: true, error: '' }
-        case HOTEL_FEED_SEARCH: 
+        case HOTEL_FEED_SEARCH:
             return {...state, searchText: action.payload }
         default:
             return state;

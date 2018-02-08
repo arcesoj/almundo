@@ -1,4 +1,4 @@
-import { createSelector } from 'reselect';
+//import { createSelector } from 'reselect';
 
 const filteredItems = (state, searchText) => {
 	if(searchText.trim().length > 0){

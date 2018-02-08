@@ -8,20 +8,20 @@ import {
     ActivityIndicator,
     RefreshControl
 } from 'react-native';
+import { SearchBar } from 'react-native-elements';
 
 import HotelCard from './HotelCard';
 import {
     getAllHotels,
     refreshHotelList,
     searchHotel
-} from 'almundo/src/containers/Hotel/actions';
-import { SearchBar } from 'react-native-elements';
-import {
-    dataSelector,
-    filteredItems,
-} from 'almundo/src/containers/Hotel/selectors';
+} from '../../containers/Hotel/actions';
 
-XMLHttpRequest = GLOBAL.originalXMLHttpRequest ? 
+import {
+    filteredItems,
+} from '../../containers/Hotel/selectors';
+
+XMLHttpRequest = GLOBAL.originalXMLHttpRequest ?
 GLOBAL.originalXMLHttpRequest : GLOBAL.XMLHttpRequest;
 
 class AppScreen extends Component {
@@ -29,7 +29,7 @@ class AppScreen extends Component {
     static navigationOptions = ({ navigation }) => ({
         title: 'Lista de Hoteles',
         headerTitleStyle : {
-            textAlign: 'left', 
+            textAlign: 'left',
             alignSelf:'center',
             color: 'black',
             fontWeight: 'bold'
@@ -47,7 +47,7 @@ class AppScreen extends Component {
     componentWillUnmount () {
         this.keyboardDidHideListener.remove();
     }
-    
+
     _keyboardDidHide () {}
 
     handleRefreshing(){
@@ -57,7 +57,7 @@ class AppScreen extends Component {
     searchHotel(searchText) {
         this.props.dispatchSearch(searchText);
 
-        if(searchText.trim().length == 0)
+        if(searchText.trim().length === 0)
             Keyboard.dismiss();
     }
 
@@ -68,20 +68,19 @@ class AppScreen extends Component {
 
     render() {
         return(
-            this.props.loading ? 
+            this.props.loading ?
                 <View style={styles.containerStyle}>
-                    <ActivityIndicator 
-                        size="large" 
+                    <ActivityIndicator
+                        size="large"
                         color='#e1b110'
                         style={{
                             flex: 1,
                             alignItems: 'center',
-                            justifyContent: 'center', 
+                            justifyContent: 'center',
                         }}
                     />
                 </View>
-             : 
-
+             :
                 <View style={{flex: 1}}>
                     <SearchBar
                         lightTheme
@@ -94,9 +93,9 @@ class AppScreen extends Component {
                         placeholder='Buscar tu hotel' />
                     <FlatList
                         renderItem={({item}) => (
-                        <HotelCard 
-                            key={`${item.id}`} 
-                            navigation = { this.props.navigation } 
+                        <HotelCard
+                            key={`${item.id}`}
+                            navigation = { this.props.navigation }
                             hotel = { item }/>
                         )}
                         data={this.props.data}
@@ -112,15 +111,14 @@ class AppScreen extends Component {
                         }
                     />
                 </View>
-                
         )
     }
 }
 
 const styles = {
   containerStyle: {
-    flex: 1, 
-    alignItems: 'center', 
+    flex: 1,
+    alignItems: 'center',
     justifyContent: 'center',
   }
 }

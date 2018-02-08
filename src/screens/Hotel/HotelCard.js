@@ -1,10 +1,8 @@
 import React from 'react';
-import { 
+import {
     Text,
     View,
-    TouchableOpacity,
     TouchableWithoutFeedback,
-    Share,
     ImageBackground,
 } from 'react-native';
 import { Rating } from 'react-native-elements';
@@ -19,9 +17,9 @@ class HotelCard extends React.PureComponent {
         return(
             <TouchableWithoutFeedback onPress={() => this.onHotel()}>
                 <View style={styles.containerStyle} >
-                    <ImageBackground 
+                    <ImageBackground
                         backgroundColor= '#ccc'
-                        resizeMode={'cover'}
+                        resizeMode='cover'
                         source={{uri: this.props.hotel.imageUrl}}
                         style={styles.imageStyle} />
                     <View style={{ flexDirection: 'row', padding: 10, height: 70 }}>
@@ -58,7 +56,7 @@ const styles = {
         flex: 1,
         flexDirection: 'column',
         margin: 7
-    }, 
+    },
     columOneStyle: {
         flex: 3,
         flexDirection: 'column'
@@ -81,14 +79,14 @@ const styles = {
         fontSize: 15,
         color: '#ccc',
         alignSelf: 'flex-end'
-    }, 
+    },
     priceStyle: {
         fontSize: 15,
         color: '#e1b110',
         paddingVertical: 10,
         fontWeight: 'bold',
         alignSelf: 'flex-end'
-    }, 
+    },
     titleStyle:{
         fontSize: 15,
         color: 'black',

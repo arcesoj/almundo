@@ -9,5 +9,5 @@ export const AppNavigator = StackNavigator({
     },
     HotelDetailScreen: {
       screen: HotelDetailScreen,
-    },  
+    },
 },{ });

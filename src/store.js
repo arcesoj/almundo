@@ -1,10 +1,9 @@
 import { createStore, applyMiddleware, compose } from 'redux';
-import { autoRehydrate } from 'redux-persist';
+import { persistStore, autoRehydrate } from 'redux-persist';
 import ReduxThunk from 'redux-thunk';
 import logger from 'redux-logger';
 import { AsyncStorage } from 'react-native';
 import reducers from 'almundo/src/containers';
-import { persistStore } from 'redux-persist';
 
 const middlewares = [];
 

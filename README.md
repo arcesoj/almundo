@@ -3,9 +3,10 @@ react-native-challenge
 
 ![Alt Text](https://media.giphy.com/media/63KDfgVOyqVboQIKAI/giphy.gif)
 
-### How to install : 
+### How to install :  
 
-1. Clone project `git clone git@github.com:arcesoj/almundo.git`
+=======
+1. Clone project `git@github.com:arcesoj/react-native-challenge.git`
 2. Run Server 
     1. `cd almundo/almundoAPI/`
     2. run `npm install`

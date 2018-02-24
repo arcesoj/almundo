@@ -116,14 +116,14 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = D625C90A48896BA8478D82A8;
+			remoteGlobalIDString = E418DC1FF2E63307EC71C00C;
 			remoteInfo = React;
 		};
 		87D72A04BB42D795C126F298113202CE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = D625C90A48896BA8478D82A8;
+			remoteGlobalIDString = E418DC1FF2E63307EC71C00C;
 			remoteInfo = React;
 		};
 		BD7BD203B4298BF64A82C4B1A61BD1E7 /* PBXContainerItemProxy */ = {
@@ -144,7 +144,7 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = D625C90A48896BA8478D82A8;
+			remoteGlobalIDString = E418DC1FF2E63307EC71C00C;
 			remoteInfo = React;
 		};
 /* End PBXContainerItemProxy section */
@@ -1955,7 +1955,7 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		31B064E8B2F4ACE90A97C304DB108AF8 /* Release */ = {
+		34C699F5C70AF905E2128887B98B27C2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7DA5524CDEDCF5D1C572E5EAE1A5B7A9 /* yoga.xcconfig */;
 			buildSettings = {
@@ -1964,6 +1964,8 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				GCC_PREFIX_HEADER = "Target Support Files/yoga/yoga-prefix.pch";
+				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = NO;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
@@ -1993,6 +1995,29 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		93E1925511F68F78BF5A090E616F2034 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7DA5524CDEDCF5D1C572E5EAE1A5B7A9 /* yoga.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/yoga/yoga-prefix.pch";
+				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -2093,27 +2118,6 @@
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
-		};
-		D141418A162924DEFA91B85BF709FE5D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7DA5524CDEDCF5D1C572E5EAE1A5B7A9 /* yoga.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				GCC_PREFIX_HEADER = "Target Support Files/yoga/yoga-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
 		};
 		E2BF5F45B6D84F9F633A0712780D77B6 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -2273,8 +2277,8 @@
 		7EA507CCD1D2D4292AF062CFEB01187A /* Build configuration list for PBXNativeTarget "yoga" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D141418A162924DEFA91B85BF709FE5D /* Debug */,
-				31B064E8B2F4ACE90A97C304DB108AF8 /* Release */,
+				93E1925511F68F78BF5A090E616F2034 /* Debug */,
+				34C699F5C70AF905E2128887B98B27C2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

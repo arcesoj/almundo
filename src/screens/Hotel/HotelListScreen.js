@@ -10,6 +10,9 @@ import {
 } from 'react-native';
 import { SearchBar } from 'react-native-elements';
 
+import Expo from 'expo';
+import "@expo/vector-icons";
+
 import HotelCard from './HotelCard';
 import {
     getAllHotels,
@@ -25,6 +28,10 @@ XMLHttpRequest = GLOBAL.originalXMLHttpRequest ?
 GLOBAL.originalXMLHttpRequest : GLOBAL.XMLHttpRequest;
 
 class AppScreen extends Component {
+
+    state = {
+        fontLoaded: true
+    }
 
     static navigationOptions = ({ navigation }) => ({
         title: 'Lista de Hoteles',
@@ -42,6 +49,15 @@ class AppScreen extends Component {
     componentWillMount(){
         this.props.dispatchGetAllHotels();
         this.keyboardDidHideListener = Keyboard.addListener('keyboardDidHide', this._keyboardDidHide);
+    }
+
+    async componentDidMount() {
+        await Expo.Font.loadAsync({
+            MaterialIcons: require('@expo/vector-icons/fonts/MaterialIcons.ttf'),
+            FontAwesome: require("@expo/vector-icons/fonts/FontAwesome.ttf"),
+        });
+
+        this.setState({fontLoaded: true});
     }
 
     componentWillUnmount () {
@@ -67,6 +83,21 @@ class AppScreen extends Component {
     }
 
     render() {
+
+        if (!this.state.fontLoaded) { 
+            return <View style={styles.containerStyle}>
+                <ActivityIndicator
+                    size="large"
+                    color='#e1b110'
+                    style={{
+                        flex: 1,
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                    }}
+                />
+            </View>;
+        }
+
         return(
             this.props.loading ?
                 <View style={styles.containerStyle}>
@@ -84,13 +115,13 @@ class AppScreen extends Component {
                 <View style={{flex: 1}}>
                     <SearchBar
                         lightTheme
-                        clearIcon
+                        platform="ios"
                         onChangeText={(text) => this.searchHotel(text)}
                         onClearText={() => this.clearSearchBar()}
                         inputStyle={{ backgroundColor: 'white' }}
+                        icon={{ type: 'awesome', name: 'search', color: '#e1b110'}}
                         containerStyle={{ backgroundColor: 'white' }}
-                        icon={{ type: 'font-awesome', name: 'search', color: '#e1b110' }}
-                        placeholder='Buscar tu hotel' />
+                        placeholder='Search your hotel' />
                     <FlatList
                         renderItem={({item}) => (
                         <HotelCard

@@ -1,3 +1,3 @@
 export default {
-	url: 'http://localhost:3000/',
+	url: 'https://rn-challenge.herokuapp.com/',
 };

@@ -1,4 +1,14 @@
 {
   "name": "almundo",
-  "displayName": "almundo"
+  "displayName": "almundo",
+  "expo": {
+    "name": "RN Challenge",
+    "slug": "rn-challenge",
+    "sdkVersion": "25.0.0",
+    "packagerOpts": {
+      "assetExts": [
+        "ttf"
+      ]
+    }
+  }
 }

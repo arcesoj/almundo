@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-
+import Expo from 'expo';
 import { Provider } from 'react-redux';
 import store from './store';
 import { AppNavigator } from './config/router';
 
-export class AppScreen extends Component {
+class AppScreen extends Component {
 
     render() {
         return(
@@ -17,3 +17,4 @@ export class AppScreen extends Component {
 }
 
 export default AppScreen;
+Expo.registerRootComponent(AppScreen);
